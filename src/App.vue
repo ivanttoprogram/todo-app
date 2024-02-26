@@ -3,15 +3,17 @@ import {ref} from 'vue'
 const todo = ref([])
 const name = ref('')
 const input_content = ref('')
+const input_category = ref(null)
 
 const addTodo = () => {
-    if(input_content.value.trim() ===){
+    if(input_content.value.trim() === '' || input_category.value == null) {
         return
     }
 }
 
 todo.value.push({
     content: input_content.value,
+    category: input_category.value, 
 })
 
 input_content.value = ''
@@ -35,6 +37,23 @@ input_content.value = ''
                 <input type="text" placeholder="e.g, Make a video" v-model="input_content" />
                 {{ input_content }}
             </form>
+
+            <h4>Pick a Category</h4>
+            <div class="optioons">
+                <label>
+                    <input type="radio" name="category" value="business" v-model="input_category" />
+                    <span class="bubble business"></span>
+                    <div>Business</div>
+                </label>
+
+                <label>
+                    <input type="radio" name="category" value="personal" v-model="input_category" />
+                    <span class="bubble business"></span>
+                    <div>Personal</div>
+                </label>
+
+                {{ input_category }}
+            </div>
         </section>
 
         <section class="todo-list">
