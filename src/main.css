@@ -177,7 +177,7 @@ input:checked ~ .bubble::after {
 .todo-list .todo-item {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #hhh;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
